@@ -1,0 +1,15 @@
+.phoneNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(222, 195, 173);
+}
+
+.form {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5rem;
+    margin: 5rem;
+}
