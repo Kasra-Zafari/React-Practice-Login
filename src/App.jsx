@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import Header from './componets/Header'
 import Home from './componets/Home'
+import PhoneNumber from './componets/PhoneNumber'
 // import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [login, setLogin] = useState(false);
+
+  const handleLoginChange = (event)=>{
+    setLogin(event)
+  }
 
   return (
     <>
-      <Header/>
-      <Home/>
+      <Header setLogin={handleLoginChange}/>
+      {login ? <PhoneNumber/>: <Home/>}
     </>
   )
 }

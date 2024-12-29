@@ -2,7 +2,14 @@ import classes from "./index.module.css"
 
 const Home = ()=>{
 
-    return <h1 className={classes.home}>Welcome to my site</h1>
+    return (
+    <>
+    <div  className={classes.home}>
+    <h1>Welcome to my site</h1>
+    <p>Please click the login button</p>
+    </div>
+    </>
+)
 
 }
 
