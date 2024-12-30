@@ -9,8 +9,8 @@
 
 .form {
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     border: 2px solid black;
     border-radius: 10px;
@@ -18,14 +18,21 @@
     margin: 5rem;
 }
 
-.form input{
+.form input {
     margin: 2rem 0;
 }
 
-button{
+button {
     padding: .5rem;
 }
 
-input{
+input {
     padding: .5rem;
+}
+
+
+.error {
+    color: red;
+    border: 2px solid red;
+    outline: 0;
 }
