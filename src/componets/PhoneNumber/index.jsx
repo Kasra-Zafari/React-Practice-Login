@@ -3,7 +3,7 @@ import classes from "./index.module.css"
 import { useState } from "react";
 
 
-const PhoneNumber = () => {
+const PhoneNumber = (props) => {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [hasError, setHasError] = useState(false);
 
@@ -11,6 +11,9 @@ const PhoneNumber = () => {
 
     const handlePhoneNumberSubmit = (event) => {
         event.preventDefault();
+        console.log("ok");
+        props.setOtp(true);
+        props.setLogin(false)
     };
 
 
@@ -49,7 +52,11 @@ const PhoneNumber = () => {
                     {/* {phoneNumber==="" ? <p>The phone number cannot be empty</p>:""} */}
 
                     {phoneNumber === "" ? (
-                        <p style={{textAlign:"center"}}>The phone number cannot be empty<br/>please enter the phone number to activate the submit button</p>
+                        <p style={{ textAlign: "center" }}>
+                            The phone number cannot be empty
+                            <br />
+                            please enter the phone number to activate the submit button
+                        </p>
                     ) : (
                         hasError && <p>Please enter the correct phone number</p>
                     )}
