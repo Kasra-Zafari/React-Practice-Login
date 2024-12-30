@@ -45,12 +45,19 @@ const PhoneNumber = () => {
                         className={hasError ? classes.error : ""}
                     />
 
-                    {hasError && <p>Please enter the correct mobile number</p>}
+                    {/* {hasError && <p>Please enter the correct phone number</p>} */}
+                    {/* {phoneNumber==="" ? <p>The phone number cannot be empty</p>:""} */}
+
+                    {phoneNumber === "" ? (
+                        <p style={{textAlign:"center"}}>The phone number cannot be empty<br/>please enter the phone number to activate the submit button</p>
+                    ) : (
+                        hasError && <p>Please enter the correct phone number</p>
+                    )}
 
                     <button
                         type="submit"
                         onClick={handlePhoneNumberSubmit}
-                        disabled={hasError || phoneNumber===""}
+                        disabled={hasError || phoneNumber === ""}
                     >
                         Submit
                     </button>
