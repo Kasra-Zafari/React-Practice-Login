@@ -11,7 +11,6 @@ const PhoneNumber = () => {
 
     const handlePhoneNumberSubmit = (event) => {
         event.preventDefault();
-        console.log(inputRef.current.value);
     };
 
 
@@ -51,7 +50,7 @@ const PhoneNumber = () => {
                     <button
                         type="submit"
                         onClick={handlePhoneNumberSubmit}
-                        disabled={hasError}
+                        disabled={hasError || phoneNumber===""}
                     >
                         Submit
                     </button>
