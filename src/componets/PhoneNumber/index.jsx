@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 const PhoneNumber = () => {
-    const [phoneNumber, setPhoneNumber]=useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
     const [hasError, setHasError] = useState(false);
 
     const inputPattern = /^09[0-9]{9}$/;
@@ -43,12 +43,18 @@ const PhoneNumber = () => {
                         placeholder="phone number"
                         onChange={handlePhoneNumberChange}
                         value={phoneNumber}
-                        className={hasError && classes.error}
+                        className={hasError ? classes.error : ""}
                     />
 
                     {hasError && <p>Please enter the correct mobile number</p>}
 
-                    <button type="submit" onClick={handlePhoneNumberSubmit}>Submit</button>
+                    <button
+                        type="submit"
+                        onClick={handlePhoneNumberSubmit}
+                        disabled={hasError}
+                    >
+                        Submit
+                    </button>
                 </form>
             </div>
         </>
