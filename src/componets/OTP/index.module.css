@@ -1,0 +1,39 @@
+.otp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+    background-color: #ECEBDE;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5rem;
+    margin: 5rem;
+}
+
+.form input {
+    margin: 2rem 0;
+}
+
+button {
+    padding: .5rem;
+    margin: 1rem;
+}
+
+input {
+    padding: .5rem;
+}
+
+
+.error {
+    color: red;
+    border: 2px solid red;
+    outline: 0;
+}

@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   const [loginStep, setLoginStep] = useState(false);
-  const [otpStep, setOtpStep]= useState(false)
+  const [otpStep, setOtpStep]= useState(true)
 
   const handleLoginChange = (event) => {
     setLoginStep(event);

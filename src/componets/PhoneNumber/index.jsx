@@ -11,7 +11,7 @@ const PhoneNumber = (props) => {
 
     const handlePhoneNumberSubmit = (event) => {
         event.preventDefault();
-        console.log("ok");
+        // console.log("ok");
         props.setOtp(true);
     };
 
@@ -65,7 +65,7 @@ const PhoneNumber = (props) => {
                         onClick={handlePhoneNumberSubmit}
                         disabled={hasError || phoneNumber === ""}
                     >
-                        Submit
+                        SUBMIT
                     </button>
                 </form>
             </div>
