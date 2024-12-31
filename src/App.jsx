@@ -6,14 +6,17 @@ import OTP from './componets/OTP';
 
 function App() {
   const [loginStep, setLoginStep] = useState(false);
-  const [otoStep, setOtpStep]= useState(false)
+  const [otpStep, setOtpStep]= useState(false)
 
   const handleLoginChange = (event) => {
     setLoginStep(event);
+    setOtpStep(false);
   };
 
   const handleLogoChange = (event) => {
     setLoginStep(event);
+    setOtpStep(false)
+  
   };
 
   const handleOtpChange = (event) => {
@@ -23,8 +26,10 @@ function App() {
   return (
     <>
       <Header setLogin={handleLoginChange} setHome={handleLogoChange} />
-      {loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
-      {otoStep && <OTP/>}
+      {/* {loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
+      {otpStep && <OTP/>} */}
+
+      {otpStep ? <OTP/> : loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
     </>
   );
 }
