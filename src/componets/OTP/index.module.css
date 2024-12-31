@@ -14,12 +14,12 @@
     flex-direction: column;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 5rem;
-    margin: 5rem;
+    padding: 3rem;
+    margin: 3rem;
 }
 
 .form input {
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 button {
@@ -34,6 +34,4 @@ input {
 
 .error {
     color: red;
-    border: 2px solid red;
-    outline: 0;
 }
