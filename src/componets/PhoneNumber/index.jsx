@@ -13,6 +13,7 @@ const PhoneNumber = (props) => {
         event.preventDefault();
         // console.log("ok");
         props.setOtp(true);
+        props.setPhoneNumber(phoneNumber);
     };
 
 

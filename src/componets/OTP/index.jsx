@@ -1,6 +1,6 @@
 import classes from "./index.module.css"
 
-const OTP = ()=>{
+const Otp = (props)=>{
     return (
         <>
         <div className={classes.otp}>
@@ -10,6 +10,7 @@ const OTP = ()=>{
 
         <form className={classes.form}>
         <h3>Please Enter OTP</h3>
+        <p>Enter the OTP code sent to the phone number {props.phoneNumber} </p>
         <input type="text" className={classes.input}/>
         <button type="submit" className={classes.button}>SUBMIT</button>
         </form>
@@ -18,4 +19,4 @@ const OTP = ()=>{
     )
 }
 
-export default OTP;
+export default Otp;

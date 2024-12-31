@@ -2,12 +2,14 @@ import { useState } from 'react';
 import Header from './componets/Header';
 import Home from './componets/Home';
 import PhoneNumber from './componets/PhoneNumber';
-import OTP from './componets/OTP';
+import Otp from './componets/OTP';
 import './App.css'
+
 
 function App() {
   const [loginStep, setLoginStep] = useState(false);
-  const [otpStep, setOtpStep]= useState(true)
+  const [otpStep, setOtpStep] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("")
 
   const handleLoginChange = (event) => {
     setLoginStep(event);
@@ -17,7 +19,7 @@ function App() {
   const handleLogoChange = (event) => {
     setLoginStep(event);
     setOtpStep(false)
-  
+
   };
 
   const handleOtpChange = (event) => {
@@ -28,9 +30,9 @@ function App() {
     <>
       <Header setLogin={handleLoginChange} setHome={handleLogoChange} />
       {/* {loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
-      {otpStep && <OTP/>} */}
+      {otpStep && <Otp/>} */}
 
-      {otpStep ? <OTP/> : loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
+      {otpStep ? <Otp phoneNumber={phoneNumber} /> : loginStep ? <PhoneNumber setOtp={handleOtpChange} setPhoneNumber={setPhoneNumber} /> : <Home />}
     </>
   );
 }
