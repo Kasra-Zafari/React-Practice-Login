@@ -9,7 +9,8 @@ import './App.css'
 function App() {
   const [loginStep, setLoginStep] = useState(false);
   const [otpStep, setOtpStep] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [otpCode, setOtpCode] = useState(null);
 
   const handleLoginChange = (event) => {
     setLoginStep(event);
@@ -32,7 +33,7 @@ function App() {
       {/* {loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
       {otpStep && <Otp/>} */}
 
-      {otpStep ? <Otp phoneNumber={phoneNumber} /> : loginStep ? <PhoneNumber setOtp={handleOtpChange} setPhoneNumber={setPhoneNumber} /> : <Home />}
+      {otpStep ? <Otp phoneNumber={phoneNumber} otpCode={otpCode}/> : loginStep ? <PhoneNumber setOtp={handleOtpChange} setPhoneNumber={setPhoneNumber} setOtpCode={setOtpCode}/> : <Home />}
     </>
   );
 }

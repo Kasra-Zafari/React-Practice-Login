@@ -14,6 +14,10 @@ const PhoneNumber = (props) => {
         // console.log("ok");
         props.setOtp(true);
         props.setPhoneNumber(phoneNumber);
+        const random = Math.floor(Math.random()*1000000);
+        console.log(random);
+        props.setOtpCode(random)
+        
     };
 
 

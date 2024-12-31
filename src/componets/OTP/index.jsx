@@ -1,6 +1,13 @@
 import classes from "./index.module.css"
 
 const Otp = (props)=>{
+
+    const handleOtpSubmit = (event)=>{
+        event.preventDefault();
+            
+    }
+
+
     return (
         <>
         <div className={classes.otp}>
@@ -12,7 +19,7 @@ const Otp = (props)=>{
         <h3>Please Enter OTP</h3>
         <p>Enter the OTP code sent to the phone number {props.phoneNumber} </p>
         <input type="text" className={classes.input}/>
-        <button type="submit" className={classes.button}>SUBMIT</button>
+        <button type="submit" className={classes.button} onClick={handleOtpSubmit}>SUBMIT</button>
         </form>
         </div>
         </>
