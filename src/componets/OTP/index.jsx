@@ -10,6 +10,11 @@ const Otp = (props) => {
         setOtpInput(event.target.value);
     }
 
+    const handleEdit = (event) => {
+        event.preventDefault()
+        props.setLogin(true);
+    }
+
     const handleOtpSubmit = (event) => {
         event.preventDefault();
         const check = Number(inputRef.current.value) === props.otpCode;
@@ -35,18 +40,19 @@ const Otp = (props) => {
                 <form className={classes.form}>
                     <h3>Please Enter OTP</h3>
                     <p>Enter the OTP code sent to the phone number {props.phoneNumber} </p>
+                    <button onClick={handleEdit}>EDIT PHONE NUMBER</button>
                     <input
-                    type="text"
-                    className={classes.input}
-                    ref={inputRef}
-                    onChange={handleInputChange}
-                    value={otpInput} />
+                        type="text"
+                        className={classes.input}
+                        ref={inputRef}
+                        onChange={handleInputChange}
+                        value={otpInput} />
 
                     <button
-                    type="submit"
-                    className={classes.button}
-                    onClick={handleOtpSubmit}
-                    disabled={otpInput===""}>
+                        type="submit"
+                        className={classes.button}
+                        onClick={handleOtpSubmit}
+                        disabled={otpInput === ""}>
                         SUBMIT</button>
                 </form>
             </div>
