@@ -11,7 +11,7 @@ const PhoneNumber = (props) => {
 
     const handlePhoneNumberSubmit = (event) => {
         event.preventDefault();
-        // console.log("ok");
+        console.log("ok");
         props.setOtp(true);
         props.setLogin(false);
     };
