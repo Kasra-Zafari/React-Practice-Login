@@ -19,8 +19,7 @@ function App() {
 
   const handleLogoChange = (event) => {
     setLoginStep(event);
-    setOtpStep(false)
-
+    setOtpStep(false);
   };
 
   const handleOtpChange = (event) => {
@@ -33,7 +32,7 @@ function App() {
       {/* {loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
       {otpStep && <Otp/>} */}
 
-      {otpStep ? <Otp phoneNumber={phoneNumber} otpCode={otpCode} setLogin={handleLoginChange}/> : loginStep ? <PhoneNumber setOtp={handleOtpChange} setPhoneNumber={setPhoneNumber} setOtpCode={setOtpCode}/> : <Home />}
+      {otpStep ? <Otp phoneNumber={phoneNumber} otpCode={otpCode} setLogin={handleLoginChange} setHome={handleLogoChange} /> : loginStep ? <PhoneNumber setOtp={handleOtpChange} setPhoneNumber={setPhoneNumber} setOtpCode={setOtpCode} /> : <Home />}
     </>
   );
 }

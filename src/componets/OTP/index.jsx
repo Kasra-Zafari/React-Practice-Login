@@ -19,7 +19,8 @@ const Otp = (props) => {
         event.preventDefault();
         const check = Number(inputRef.current.value) === props.otpCode;
         if (check) {
-            console.log("ok");
+            // console.log("ok");
+            props.setHome(false);
 
         }
         else {
