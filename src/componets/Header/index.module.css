@@ -3,16 +3,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #b5b5b5;
+    background-color: #A59D84;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
+    height: 10vh;
   }
 
   .logo {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;
+    background-color: #ECEBDE;
+    color: black ;
     cursor: pointer;
+    padding: .5rem;
+    border-radius: 3px;
+  }
+
+
+  .logo:hover{
+    background-color: #A59D84;
   }
   
   .nav {
@@ -36,14 +45,14 @@
   .loginButton {
     padding: 5px 10px;
     font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
+    background-color: #ECEBDE;
+    color: black ;
     border: none;
     border-radius: 3px;
     cursor: pointer;
   }
   
   .loginButton:hover {
-    background-color: #0056b3;
+    background-color: #A59D84;
   }
   

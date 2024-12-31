@@ -3,6 +3,7 @@ import Header from './componets/Header';
 import Home from './componets/Home';
 import PhoneNumber from './componets/PhoneNumber';
 import OTP from './componets/OTP';
+import './App.css'
 
 function App() {
   const [loginStep, setLoginStep] = useState(false);
