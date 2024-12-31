@@ -11,6 +11,7 @@ function App() {
   const [otpStep, setOtpStep] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otpCode, setOtpCode] = useState(null);
+  const [userName, setUserName] = useState ("")
 
   const handleLoginChange = (event) => {
     setLoginStep(event);
@@ -28,11 +29,11 @@ function App() {
 
   return (
     <>
-      <Header setLogin={handleLoginChange} setHome={handleLogoChange} />
+      <Header setLogin={handleLoginChange} setHome={handleLogoChange} userName={userName}/>
       {/* {loginStep ? <PhoneNumber setOtp={handleOtpChange}/> : <Home />}
       {otpStep && <Otp/>} */}
 
-      {otpStep ? <Otp phoneNumber={phoneNumber} otpCode={otpCode} setLogin={handleLoginChange} setHome={handleLogoChange} /> : loginStep ? <PhoneNumber setOtp={handleOtpChange} setPhoneNumber={setPhoneNumber} setOtpCode={setOtpCode} /> : <Home />}
+      {otpStep ? <Otp phoneNumber={phoneNumber} otpCode={otpCode} setLogin={handleLoginChange} setHome={handleLogoChange} setUserName={setUserName}/> : loginStep ? <PhoneNumber setOtp={handleOtpChange} setPhoneNumber={setPhoneNumber} setOtpCode={setOtpCode} /> : <Home />}
     </>
   );
 }

@@ -38,7 +38,7 @@ const Header = (props) => {
                     <button
                         className={classes.loginButton}
                         onClick={handleLogin}>
-                        Login
+                        {props.userName || "Login"}
                     </button>
                 </div>
             </header>

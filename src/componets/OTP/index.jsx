@@ -21,6 +21,7 @@ const Otp = (props) => {
         if (check) {
             // console.log("ok");
             props.setHome(false);
+            props.setUserName(props.phoneNumber)
 
         }
         else {
@@ -54,7 +55,7 @@ const Otp = (props) => {
                         className={classes.button}
                         onClick={handleOtpSubmit}
                         disabled={otpInput === ""}>
-                        SUBMIT</button>
+                        CONFIRM</button>
                 </form>
             </div>
         </>
