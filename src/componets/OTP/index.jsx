@@ -6,6 +6,7 @@ const Otp = (props) => {
     const inputRef = useRef(null);
     const [otpInput, setOtpInput] = useState("")
     const [notValid, setNotValid] = useState(false);
+    const [time, setTime] = useState(15)
 
     const handleInputChange = (event) => {
         setOtpInput(event.target.value);
@@ -53,6 +54,8 @@ const Otp = (props) => {
                         value={otpInput} />
 
                     {notValid ? <p className={classes.error}>The code sent is not valid</p>: ""}
+
+                    <p>Code validity period: {time} seconds</p>
 
                     <button
                         type="submit"
