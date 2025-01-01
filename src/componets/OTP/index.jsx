@@ -37,7 +37,27 @@ const Otp = (props) => {
     }
 
 
+    // const startTimer = () => {
+    //     timerRef.current = setInterval(() => {
+    //         setTimer((prev) => {
+    //             if (prev <= 1) {
+    //                 clearInterval(timerRef.current);
+    //                 timerRef.current = null;
+    //                 setShowResend(true);
+    //                 return 0;
+    //             }
+    //             return prev - 1;
+    //         });
+    //     }, 1000);
+    // };
+
+
     const startTimer = () => {
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+        }
+        setShowResend(false);
+        setTimer(10);
         timerRef.current = setInterval(() => {
             setTimer((prev) => {
                 if (prev <= 1) {
@@ -51,7 +71,7 @@ const Otp = (props) => {
         }, 1000);
     };
 
-    if (timer === 10) {
+    if (timer === 10 && timerRef.current === null) {
         startTimer()
     }
 
