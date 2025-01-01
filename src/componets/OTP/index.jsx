@@ -6,7 +6,8 @@ const Otp = (props) => {
     const inputRef = useRef(null);
     const [otpInput, setOtpInput] = useState("")
     const [notValid, setNotValid] = useState(false);
-    const [timer, setTimer] = useState(15)
+    const [timer, setTimer] = useState(5);
+    const timerRef = useRef(null);
 
     const handleInputChange = (event) => {
         setOtpInput(event.target.value);
@@ -36,14 +37,25 @@ const Otp = (props) => {
 
 
     const startTimer = () => {
-        setInterval(() => {
-            setTimer(prev => prev - 1)
-        },1000)
-    }
+        timerRef.current = setInterval(() => {
+            setTimer((prev) => {
+                if (prev <= 1) {
+                    clearInterval(timerRef.current);
+                    timerRef.current = null;
+                    return 0;
+                }
+                return prev - 1;
+            });
+        }, 1000);
+    };
 
-    if(timer===15){
+    if(timer===5){
         startTimer()
     }
+
+    // if(timer===1){
+    //     clearInterval(timerRef)
+    // }
 
 
     return (
