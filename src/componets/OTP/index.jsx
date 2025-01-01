@@ -84,7 +84,7 @@ const Otp = (props) => {
                         type="submit"
                         className={classes.button}
                         onClick={handleOtpSubmit}
-                        disabled={otpInput === ""}>
+                        disabled={otpInput === "" || timer===0}>
                         CONFIRM</button>
                 </form>
             </div>
