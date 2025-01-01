@@ -6,7 +6,7 @@ const Otp = (props) => {
     const inputRef = useRef(null);
     const [otpInput, setOtpInput] = useState("")
     const [notValid, setNotValid] = useState(false);
-    const [time, setTime] = useState(15)
+    const [timer, setTimer] = useState(15)
 
     const handleInputChange = (event) => {
         setOtpInput(event.target.value);
@@ -35,6 +35,17 @@ const Otp = (props) => {
     }
 
 
+    const startTimer = () => {
+        setInterval(() => {
+            setTimer(prev => prev - 1)
+        },1000)
+    }
+
+    if(timer===15){
+        startTimer()
+    }
+
+
     return (
         <>
             <div className={classes.otp}>
@@ -53,9 +64,9 @@ const Otp = (props) => {
                         onChange={handleInputChange}
                         value={otpInput} />
 
-                    {notValid ? <p className={classes.error}>The code sent is not valid</p>: ""}
+                    {notValid ? <p className={classes.error}>The code sent is not valid</p> : ""}
 
-                    <p>Code validity period: {time} seconds</p>
+                    <p>Code validity period: {timer} seconds</p>
 
                     <button
                         type="submit"
