@@ -6,7 +6,7 @@ const Otp = (props) => {
     const inputRef = useRef(null);
     const [otpInput, setOtpInput] = useState("")
     const [notValid, setNotValid] = useState(false);
-    const [timer, setTimer] = useState(5);
+    const [timer, setTimer] = useState(10);
     const timerRef = useRef(null);
 
     const handleInputChange = (event) => {
@@ -49,7 +49,7 @@ const Otp = (props) => {
         }, 1000);
     };
 
-    if(timer===5){
+    if (timer === 10) {
         startTimer()
     }
 
@@ -57,6 +57,14 @@ const Otp = (props) => {
     //     clearInterval(timerRef)
     // }
 
+
+
+    const handleResend = (event) => {
+        event.preventDefault()
+        if ( timer === 1){
+            startTimer()
+        }
+    }
 
     return (
         <>
@@ -84,8 +92,10 @@ const Otp = (props) => {
                         type="submit"
                         className={classes.button}
                         onClick={handleOtpSubmit}
-                        disabled={otpInput === "" || timer===0}>
+                        disabled={otpInput === "" || timer === 0}>
                         CONFIRM</button>
+
+                    <button onClick={handleResend}>Resend OTP</button>
                 </form>
             </div>
         </>
