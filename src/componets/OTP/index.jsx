@@ -8,6 +8,7 @@ const Otp = (props) => {
     const [notValid, setNotValid] = useState(false);
     const [timer, setTimer] = useState(10);
     const timerRef = useRef(null);
+    const [showResend, setShowResend] = useState(false)
 
     const handleInputChange = (event) => {
         setOtpInput(event.target.value);
@@ -42,6 +43,7 @@ const Otp = (props) => {
                 if (prev <= 1) {
                     clearInterval(timerRef.current);
                     timerRef.current = null;
+                    setShowResend(true);
                     return 0;
                 }
                 return prev - 1;
@@ -61,9 +63,7 @@ const Otp = (props) => {
 
     const handleResend = (event) => {
         event.preventDefault()
-        if ( timer === 1){
-            startTimer()
-        }
+        startTimer()
     }
 
     return (
@@ -95,7 +95,7 @@ const Otp = (props) => {
                         disabled={otpInput === "" || timer === 0}>
                         CONFIRM</button>
 
-                    <button onClick={handleResend}>Resend OTP</button>
+                    {showResend && <button onClick={handleResend}>Resend OTP</button>}
                 </form>
             </div>
         </>
