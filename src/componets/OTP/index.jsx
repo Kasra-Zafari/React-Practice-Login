@@ -6,7 +6,7 @@ const Otp = (props) => {
     const inputRef = useRef(null);
     const [otpInput, setOtpInput] = useState("")
     const [notValid, setNotValid] = useState(false);
-    const [timer, setTimer] = useState(10);
+    const [timer, setTimer] = useState(15);
     const timerRef = useRef(null);
     const [showResend, setShowResend] = useState(false)
 
@@ -57,7 +57,7 @@ const Otp = (props) => {
             clearInterval(timerRef.current);
         }
         setShowResend(false);
-        setTimer(10);
+        setTimer(15);
         timerRef.current = setInterval(() => {
             setTimer((prev) => {
                 if (prev <= 1) {
