@@ -71,7 +71,7 @@ const Otp = (props) => {
         }, 1000);
     };
 
-    if (timer === 10 && timerRef.current === null) {
+    if (timer === 15 && timerRef.current === null) {
         startTimer()
     }
 
